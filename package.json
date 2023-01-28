@@ -6,13 +6,18 @@
   "description": "a simple discord bot by da1nxk",
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "eslint-plugin-import": "^2.27.5",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.4"
   },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only ./src",
     "start": "node ./dist",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "discord.js": "^14.7.1",
