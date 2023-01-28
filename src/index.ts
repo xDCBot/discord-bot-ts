@@ -7,7 +7,7 @@ const client = new Discord.Client({
 });
 
 client.on("ready", () => {
-  console.log(`Connected as ${client.user!.tag}!`);
+  console.log(`Connected as ${client.user?.tag}!`);
 });
 
 client
