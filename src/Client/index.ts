@@ -29,8 +29,8 @@ class Bot extends Client {
 
   async registerCommands({ commands, guildId }: CommandRegistrationOptions) {
     guildId
-      ? this.guilds.cache.get(guildId)?.commands.set(commands)
-      : this.application?.commands.set(commands);
+      ? await this.guilds.cache.get(guildId)?.commands.set(commands)
+      : await this.application?.commands.set(commands);
   }
 
   async registerModules() {
@@ -53,6 +53,13 @@ class Bot extends Client {
     });
 
     await Promise.all(promises);
+
+    this.on("ready", () => {
+      this.registerCommands({
+        commands: slashCommands,
+        guildId: `${process.env.GUILD_ID}`,
+      });
+    });
   }
 
   public async start() {
@@ -76,6 +83,10 @@ class Bot extends Client {
       const { event } = await import(`${eventDirectory}/${file}`);
       this.events.set(event.name, event);
       this.on(event.name, event.run.bind(null, this));
+
+      process.env.GUILD_ID
+        ? console.log("[SERVER]: Configured Test Server")
+        : console.log("[SERVER]: Test server not configured");
     }
   }
 }
