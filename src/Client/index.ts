@@ -56,9 +56,15 @@ class Bot extends Client {
   }
 
   public async start() {
-    this.login(process.env.TOKEN);
-    this.registerModules();
+    this.login(process.env.TOKEN)
+      .then(() => {
+        console.log("[SERVER]: Successfully Connected!");
+      })
+      .catch((err) => {
+        console.error("[SERVER]: Error connecting: ", err);
+      });
 
+    this.registerModules();
     const eventDirectory = path.join(__dirname, "..", "Events");
     const eventFiles = readdirSync(eventDirectory);
 
