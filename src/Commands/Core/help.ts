@@ -5,7 +5,7 @@ export const slash: Command = {
   description: "🗒️ Help menu.",
   run: ({ interaction }) => {
     return interaction.followUp({
-      content: `This code comes from a GitHub project (https://github.com/xDCBot/discord-bot-ts).\nThe use of this one is possible while keeping the credits for free.\nIf you find a bug, please contact us!\nDaniel R.#9999 and miukimuik#0062`,
+      content: `This code comes from a GitHub project (https://github.com/xDCBot/discord-bot-ts).\nThe use of this one is possible while keeping the credits for free.\nIf you find a bug, please contact us!\nmiukimuik#0062 and Daniel R.#9999`,
     });
   },
 };
