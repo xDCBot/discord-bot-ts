@@ -2,7 +2,7 @@ import { Command } from "../../Typings";
 
 export const slash: Command = {
   name: "help",
-  description: "🗒️ Help menu.",
+  description: "🗒️ Show help information.",
   run: ({ interaction }) => {
     return interaction.followUp({
       content: `This code comes from a GitHub project (https://github.com/xDCBot/discord-bot-ts).\n
