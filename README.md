@@ -1,3 +1,1 @@
-## Discord bot
-
-### Discord bot with TypeScript
+# Discord bot with TypeScript
