@@ -65,10 +65,10 @@ class Bot extends Client {
   public async start() {
     this.login(process.env.TOKEN)
       .then(() => {
-        console.log("[SERVER]: Successfully Connected!");
+        console.log("[CLIENT]: Successfully Connected!");
       })
       .catch((err) => {
-        console.error("[SERVER]: Error connecting: ", err);
+        console.error("[CLIENT]: Error connecting: ", err);
       });
 
     this.registerModules();
@@ -85,8 +85,8 @@ class Bot extends Client {
       this.on(event.name, event.run.bind(null, this));
 
       process.env.GUILD_ID
-        ? console.log("[SERVER]: Configured Test Server")
-        : console.log("[SERVER]: Test server not configured");
+        ? console.log("[CLIENT]: Configured Test Server")
+        : console.log("[CLIENT]: Test server not configured");
     }
   }
 }
