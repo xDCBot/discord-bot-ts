@@ -2,7 +2,9 @@ import { Event } from "../Typings";
 
 export const event: Event = {
   name: "ready",
-  run: (server) => {
-    console.log(`[SERVER]: ${server.user?.tag} ONLINE!`);
+  run: (client) => {
+    console.log(`[CLIENT]: Total servers: ${client.guilds.cache.size}`);
+    console.log(`[CLIENT]: ${client.user?.tag} ONLINE!`);
+    client.user?.setActivity("Music BOT");
   },
 };
