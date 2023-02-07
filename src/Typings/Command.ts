@@ -23,6 +23,7 @@ type Command = ApplicationCommandData & {
   name: string;
   description: string;
   run: Run;
+  voiceChannel?: boolean;
 } & ChatInputApplicationCommandData;
 
 export { Command, ExtendedInteraction };
