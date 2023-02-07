@@ -29,7 +29,7 @@ export const slash: Command = {
       spotifyBridge: true,
       ytdlOptions: {
         quality: "highestaudio",
-        highWaterMark: 1 << 30,
+        highWaterMark: 1 << 25,
       },
     });
 
