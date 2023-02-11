@@ -15,6 +15,9 @@
       "build": "tsc"
     },
     "dependencies": {
+      "ffmpeg-static": "^5.1.0",
+      "opusscript": "^0.0.8",
+      "discord-player": "^5.4.0",
       "discord.js": "^14.7.1",
       "dotenv": "^16.0.3"
     }
