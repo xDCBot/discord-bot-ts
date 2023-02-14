@@ -11,15 +11,23 @@ export const slash: Command = {
     const queue = player.getQueue(interaction.guildId!);
 
     if (!queue || !queue.playing) {
+      embed.setTitle('Stop audio');
+      embed.setDescription('There is no audio currently playing!');
+      embed.setColor('#ff0000');
+
       return interaction.editReply({
-        content: 'There is no audio currently playing!'
+        embeds: [embed],
       });
     }
 
     queue.stop();
 
+    embed.setTitle('Stop audio');
+    embed.setDescription('Audio stopped!');
+    embed.setColor('#00ff00');
+
     return interaction.editReply({
-      content: 'Audio stopped!'
+      embeds: [embed],
     });
   },
 };
